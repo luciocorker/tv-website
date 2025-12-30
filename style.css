@@ -1,85 +1,779 @@
-.subtitle {
-    font-size: 1.15rem;
-    font-weight: 500;
-    color: #aee9fa;
-    margin-bottom: 18px;
-    letter-spacing: 0.5px;
-}
-
-.description {
-    font-size: 1rem;
-    color: #e0e6ed;
-    margin-bottom: 28px;
-}
-
-.download-section {
-    margin-top: 10px;
-}
-
-.download-icon {
-    font-size: 1.3em;
-    vertical-align: middle;
-    margin-right: 8px;
-}
-
-.version {
-    font-size: 0.95rem;
-    color: #7ad1f7;
-    margin-top: 10px;
-    letter-spacing: 0.5px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background: linear-gradient(135deg, #1a1f2b 0%, #3a3f5c 100%);
+    background: #0a0a0f;
     color: #f5f6fa;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-
-.container {
-    max-width: 400px;
-    margin: 80px auto;
-    background: rgba(34, 40, 60, 0.95);
-    padding: 32px 24px 40px 24px;
-    border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(34,40,60,0.25);
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(180deg, #0f1923 0%, #0a0a0f 100%);
+    padding: 60px 20px 40px 20px;
     text-align: center;
+    position: relative;
 }
 
-h1 {
-    margin-bottom: 12px;
-    font-size: 2.1rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: #6be1f7;
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center top, rgba(107, 225, 247, 0.1) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .logo {
-    width: 400px;
+    width: 280px;
     height: auto;
-    margin-top: -50px;
-    margin-bottom: -100px;
-    filter: drop-shadow(0 2px 8px #222);
+    filter: drop-shadow(0 0 30px rgba(107, 225, 247, 0.3));
+    margin-bottom: 10px;
 }
 
+.tagline {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+    font-weight: 600;
+}
+
+/* Free Trial Badge */
+.free-trial-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b35 0%, #f7c531 100%);
+    color: #000;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+    animation: glow 2s ease-in-out infinite;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.trial-icon {
+    margin-right: 8px;
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 30px rgba(255, 107, 53, 0.7);
+    }
+}
+
+/* Features Section */
+.features-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.feature-card {
+    background: linear-gradient(145deg, #1a1a24 0%, #12121a 100%);
+    border: 1px solid rgba(107, 225, 247, 0.1);
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(107, 225, 247, 0.3);
+    box-shadow: 0 10px 40px rgba(107, 225, 247, 0.1);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    color: #6be1f7;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    color: #8a8a9a;
+    font-size: 0.9rem;
+}
+
+/* Channels Section */
+.channels-section {
+    max-width: 1100px;
+    margin: 20px auto 40px auto;
+    background: linear-gradient(145deg, #1a1a24 0%, #12121a 100%);
+    border: 1px solid rgba(107, 225, 247, 0.1);
+    padding: 40px 30px 50px 30px;
+    border-radius: 24px;
+}
+
+.channels-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.channels-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #6be1f7, #3a8dde);
+    margin: 15px auto 30px auto;
+    border-radius: 2px;
+}
+
+.channels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 15px;
+    justify-items: center;
+    align-items: center;
+}
+
+.channel-logo {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.channel-logo:hover {
+    transform: scale(1.15);
+    background: rgba(107, 225, 247, 0.1);
+    border-color: rgba(107, 225, 247, 0.3);
+    box-shadow: 0 8px 25px rgba(107, 225, 247, 0.2);
+}
+
+.channels-note {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: #6be1f7;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Download Section */
+.download-section {
+    margin-top: 40px;
+    text-align: center;
+}
 
 .download-btn {
     display: inline-block;
-    margin-top: 24px;
-    padding: 14px 36px;
-    background: linear-gradient(90deg, #6be1f7 0%, #3a8dde 100%);
-    color: #222;
+    padding: 18px 50px;
+    background: linear-gradient(135deg, #6be1f7 0%, #3a8dde 100%);
+    color: #0a0a0f;
     text-decoration: none;
-    font-size: 1.15rem;
-    font-weight: 600;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(34,40,60,0.15);
-    transition: background 0.2s, color 0.2s;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: 0 4px 25px rgba(107, 225, 247, 0.4);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .download-btn:hover {
-    background: linear-gradient(90deg, #3a8dde 0%, #6be1f7 100%);
-    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 35px rgba(107, 225, 247, 0.5);
+    background: linear-gradient(135deg, #7eeaff 0%, #4a9dee 100%);
+}
+
+.download-icon {
+    margin-right: 10px;
+}
+
+.version {
+    font-size: 0.9rem;
+    color: #6a6a7a;
+    margin-top: 15px;
+}
+
+.compatibility {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.compatibility span {
+    color: #4ade80;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Downloader App Option */
+.downloader-option {
+    margin: 30px 0;
+}
+
+.or-divider {
+    display: flex;
+    align-items: center;
+    color: #6a6a7a;
+    margin-bottom: 25px;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.or-divider span {
+    padding: 0 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.downloader-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    background: linear-gradient(145deg, #1a1a24 0%, #12121a 100%);
+    border: 1px solid rgba(255, 152, 0, 0.3);
+    border-radius: 16px;
+    padding: 25px 30px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.downloader-logo {
+    width: 80px;
+    height: auto;
+    border-radius: 12px;
+}
+
+.downloader-info {
+    text-align: left;
+}
+
+.downloader-info h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.downloader-info p {
+    color: #8a8a9a;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.downloader-code {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff9800 0%, #ff5722 100%);
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding: 10px 25px;
+    border-radius: 10px;
+    letter-spacing: 3px;
+    font-family: 'Courier New', monospace;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #4a4a5a;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Pricing Section */
+.pricing-section {
+    max-width: 1200px;
+    margin: 20px auto 40px auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.pricing-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.pricing-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #6be1f7, #3a8dde);
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: linear-gradient(145deg, #1a1a24 0%, #12121a 100%);
+    border-radius: 20px;
+    padding: 25px 20px;
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(107, 225, 247, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(107, 225, 247, 0.15);
+    border-color: rgba(107, 225, 247, 0.4);
+}
+
+.pricing-card.trial {
+    border-color: rgba(255, 107, 53, 0.4);
+    box-shadow: 0 8px 30px rgba(255, 107, 53, 0.15);
+}
+
+.pricing-card.trial:hover {
+    border-color: rgba(255, 107, 53, 0.6);
+    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.25);
+}
+
+.trial-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #ff6b35, #f7c531);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.trial-btn {
+    background: linear-gradient(135deg, #ff6b35 0%, #f7c531 100%) !important;
+    color: #000 !important;
+}
+
+.trial-btn:hover {
+    background: linear-gradient(135deg, #ff8555 0%, #f9d551 100%) !important;
+}
+
+.pricing-card.featured {
+    border-color: #6be1f7;
+    box-shadow: 0 8px 30px rgba(107, 225, 247, 0.2);
+}
+
+.popular-badge, .save-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #ff6b35, #f7c531);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.save-badge {
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+}
+
+.plan-name {
+    color: #6be1f7;
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+
+.plan-subtitle {
+    color: #6be1f7;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.plan-price {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.plan-price span {
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+.plan-details {
+    border: 1px solid rgba(107, 225, 247, 0.3);
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    background: rgba(107, 225, 247, 0.05);
+}
+
+.plan-details p {
+    color: #c0c0c0;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.plan-details strong {
+    color: #6be1f7;
+}
+
+.plan-validity {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.validity-days {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.validity-days small {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #8a8a9a;
+}
+
+.validity-android {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #6be1f7;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.buy-btn {
+    display: block;
+    background: linear-gradient(135deg, #6be1f7 0%, #3a8dde 100%);
+    color: #0a0a0f;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 15px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(107, 225, 247, 0.3);
+}
+
+.buy-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 30px rgba(107, 225, 247, 0.5);
+    background: linear-gradient(135deg, #7eeaff 0%, #4a9dee 100%);
+}
+
+.pricing-note {
+    color: #6a6a7a;
+    font-size: 0.85rem;
+    margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .downloader-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .downloader-info {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 15px 30px 15px;
+    }
+    
+    .logo {
+        width: 200px;
+    }
+    
+    .tagline {
+        font-size: 1.2rem;
+        padding: 0 10px;
+    }
+    
+    .free-trial-badge {
+        font-size: 0.85rem;
+        padding: 10px 20px;
+    }
+    
+    .features-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 30px 15px;
+    }
+    
+    .feature-card {
+        padding: 20px 15px;
+    }
+    
+    .feature-icon {
+        font-size: 2rem;
+    }
+    
+    .feature-card h3 {
+        font-size: 1rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.8rem;
+    }
+    
+    .channels-section {
+        margin: 20px 15px 30px 15px;
+        padding: 25px 15px;
+    }
+    
+    .channels-title {
+        font-size: 1.4rem;
+    }
+    
+    .channels-grid {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        gap: 10px;
+    }
+    
+    .channel-logo {
+        width: 55px;
+        height: 55px;
+        padding: 6px;
+    }
+    
+    .channels-note {
+        font-size: 1rem;
+    }
+    
+    .pricing-section {
+        padding: 30px 15px;
+    }
+    
+    .pricing-title {
+        font-size: 1.6rem;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    
+    .pricing-card {
+        padding: 20px 15px;
+    }
+    
+    .plan-name {
+        font-size: 1.4rem;
+    }
+    
+    .plan-price span {
+        font-size: 2.5rem;
+    }
+    
+    .plan-details {
+        padding: 8px 15px;
+    }
+    
+    .validity-days {
+        font-size: 1.8rem;
+    }
+    
+    .buy-btn {
+        font-size: 1.1rem;
+        padding: 12px 20px;
+    }
+    
+    .download-btn {
+        padding: 14px 35px;
+        font-size: 1rem;
+    }
+    
+    .downloader-box {
+        max-width: 100%;
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .downloader-logo {
+        width: 60px;
+    }
+    
+    .downloader-info h4 {
+        font-size: 1rem;
+    }
+    
+    .downloader-code {
+        font-size: 1.3rem;
+        padding: 8px 20px;
+    }
+    
+    .compatibility {
+        gap: 15px;
+    }
+    
+    .compatibility span {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 180px;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
+    
+    .free-trial-badge {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+    }
+    
+    .features-section {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    
+    .feature-card {
+        padding: 15px 10px;
+    }
+    
+    .feature-icon {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .feature-card h3 {
+        font-size: 0.9rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.75rem;
+    }
+    
+    .channels-grid {
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+        gap: 8px;
+    }
+    
+    .channel-logo {
+        width: 45px;
+        height: 45px;
+        padding: 5px;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .pricing-card {
+        padding: 25px 20px;
+    }
+    
+    .plan-name {
+        font-size: 1.6rem;
+    }
+    
+    .plan-price span {
+        font-size: 3rem;
+    }
+    
+    .popular-badge, .save-badge, .trial-badge {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+    }
+    
+    .compatibility {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .or-divider span {
+        padding: 0 15px;
+        font-size: 0.8rem;
+    }
+    
+    .downloader-info h4 {
+        font-size: 0.95rem;
+    }
+    
+    .downloader-info p {
+        font-size: 0.85rem;
+    }
+    
+    .downloader-code {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+    
+    .footer {
+        padding: 20px 15px;
+    }
 }
