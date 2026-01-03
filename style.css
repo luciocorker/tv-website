@@ -392,6 +392,8 @@ body {
 .trial-btn {
     background: linear-gradient(135deg, #ff6b35 0%, #f7c531 100%) !important;
     color: #000 !important;
+    display: block;
+    margin: 0 auto;
 }
 
 .trial-btn:hover {
