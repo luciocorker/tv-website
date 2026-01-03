@@ -806,3 +806,246 @@ body {
     width: 32px;
     height: 32px;
 }
+
+/* Trial Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #1a1a24 0%, #12121a 100%);
+    border: 1px solid rgba(107, 225, 247, 0.2);
+    border-radius: 20px;
+    padding: 40px 35px;
+    max-width: 450px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    color: #8a8a9a;
+    cursor: pointer;
+    transition: color 0.3s;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: #6be1f7;
+}
+
+.modal-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.modal-subtitle {
+    font-size: 0.95rem;
+    color: #8a8a9a;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6be1f7;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(107, 225, 247, 0.2);
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #6be1f7;
+    background: rgba(107, 225, 247, 0.08);
+    box-shadow: 0 0 0 3px rgba(107, 225, 247, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #5a5a6a;
+}
+
+.modal-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #6be1f7 0%, #3a8dde 100%);
+    color: #0a0a0f;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.modal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(107, 225, 247, 0.3);
+}
+
+.loading-message {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(107, 225, 247, 0.2);
+    border-top: 4px solid #6be1f7;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-message p {
+    color: #8a8a9a;
+    font-size: 1rem;
+}
+
+.success-message {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.success-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #00d084 0%, #00b36a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    font-size: 2.5rem;
+    color: #ffffff;
+    animation: successPop 0.5s ease;
+}
+
+@keyframes successPop {
+    0% { transform: scale(0); }
+    60% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.success-message h3 {
+    font-size: 1.5rem;
+    color: #00d084;
+    margin-bottom: 20px;
+}
+
+.credentials {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(107, 225, 247, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.credentials p {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.credentials p:last-child {
+    margin-bottom: 0;
+}
+
+.credentials strong {
+    color: #6be1f7;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.credentials span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    background: rgba(107, 225, 247, 0.1);
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
+.success-note {
+    color: #f7c531;
+    font-size: 0.9rem;
+    margin: 15px 0 20px 0;
+    padding: 12px;
+    background: rgba(247, 197, 49, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid #f7c531;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 30px 25px;
+        max-width: 95%;
+    }
+    
+    .modal-title {
+        font-size: 1.3rem;
+    }
+    
+    .credentials span {
+        font-size: 1rem;
+    }
+}
